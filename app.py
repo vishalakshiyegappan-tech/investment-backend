@@ -30,16 +30,16 @@ def predict():
     results = select_plans(risk_level, monthly_investment, investment_duration)
 
     # save user_input to DB
-    conn = get_db_connection()
-    cursor = conn.cursor()
-
-    query = """
-        INSERT INTO user_inputs (name, age, income_source, income_amount, investment_percentage, investment_duration, risk_level)
-        VALUES (%s,%s,%s,%s,%s,%s,%s)
-    """
-
-    cursor.execute(query, (name, age, income_source, income_amount, investment_percentage, investment_duration, risk_level))
-    conn.commit()
+    #conn = get_db_connection()
+    #cursor = conn.cursor()
+    #
+    #query = """
+    #    INSERT INTO user_inputs (name, age, income_source, income_amount, investment_percentage, investment_duration, risk_level)
+    #    VALUES (%s,%s,%s,%s,%s,%s,%s)
+    #"""
+    #
+    #cursor.execute(query, (name, age, income_source, income_amount, investment_percentage, investment_duration, risk_level))
+    #conn.commit()
 
     return jsonify({
         "monthly_investment": monthly_investment,
